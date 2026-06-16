@@ -1,20 +1,18 @@
-//
-//  Definitions.swift
-//  SwiftVisionTasks
-//
-//  Created by Pascal Burlet on 03.03.2025.
-//
+// Definitions.swift
+// SwiftVisionTasks
 
 import Foundation
 
 @available(macOS 16.0.0, *)
 enum Definitions {
-    private static let currentFile = URL(#file)!
-    static let packageRoot = URL(string: currentFile.path)!
+    private static let currentFile = URL(fileURLWithPath: #file)
+    
+    static let packageRoot = currentFile
         .deletingLastPathComponent()
         .deletingLastPathComponent()
         .deletingLastPathComponent()
         .deletingLastPathComponent()
+        
     static let temporaryProjectRoot = packageRoot
         .appending(path: "MediaPipeTasksCommonGraph")
 }
